@@ -1,0 +1,31 @@
+@import url("../../../styles.css");
+
+.main-content{
+  height: 547px;
+  background: url('../../../assets/Imagem1.png') no-repeat;
+  max-width: 100%;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:var(--white);
+}
+
+.btn-orange{
+  background: var(--orange);
+  color:var(--white);
+}
+
+@media (max-width: 992px){
+  .main-content{
+    height: 480px;
+    background-size: contain;
+    align-items: flex-start;
+    font-size: .9rem;
+  }
+  .main-content h1{
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,63 @@
+@import url("../../../styles.css");
+
+.navbar-brand{
+  display: none;
+}
+
+.navbar{
+  background:var(--brown);
+  height: 130px;
+}
+
+.logo_nav a{
+  background: var(--white);
+  padding: 30px;
+  margin-top: 15px;
+  display: flex;
+}
+
+.bg-gray{
+  height: 21px;
+  background: var(--white-light);
+}
+
+.nav-item-cart{
+  margin-left: 4rem;
+}
+
+.icon-cart{
+  position: absolute;
+}
+
+.item-cart{
+  width: 28px;
+  height: 28px;
+  background: var(--orange);
+  padding: 8px;
+  border-radius: 4px;
+  position: relative;
+  margin-left: 20px;
+  display: flex;
+  color:var(--white);
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 992px){
+  .nav-item-cart{
+    margin-left: 0;
+  }
+  .navbar{
+    background:var(--brown);
+    height: auto;
+  }
+  .navbar-brand{
+    display: flex;
+    background: var(--white);
+    padding: 20px;
+    margin-top: 0px;
+  }
+  .logo_nav{
+    display: none;
+  }
+}
