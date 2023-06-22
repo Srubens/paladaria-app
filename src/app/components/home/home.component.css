@@ -86,6 +86,10 @@
   margin-top: 161px;
 }
 
+.btn-enviar{
+  margin-bottom: 20px;
+}
+
 .bg-orange{
   width: 409px;
   height: 460px;
@@ -93,6 +97,10 @@
   background: var(--orange);
   padding: 34px;
   color: var(--white);
+}
+
+.bg-orange img{
+  max-width: 100%;
 }
 
 .location-icon{

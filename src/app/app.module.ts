@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,6 +8,11 @@ import { HomeComponent } from './components/home/home.component';
 import { OrdemCompraComponent } from './components/ordem-compra/ordem-compra.component';
 import { ProdutoComponent } from './components/produto/produto.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http"
+import localePt from "@angular/common/locales/pt"
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localePt,'pt');
 
 @NgModule({
   declarations: [
@@ -20,9 +25,12 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'pt-BR'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

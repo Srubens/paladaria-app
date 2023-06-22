@@ -35,17 +35,21 @@
       <h3>Produtos</h3>
       <div class="barra"></div>
     </div>
-    <div class="d-flex flex-column flex-md-row">
-      <div class="col-md-4 col-12 pl-md-0">
+    <div *ngIf="!produtos">
+      Erro ao carregar produtos
+    </div>
+    <div  class="d-flex flex-column flex-md-row">
+      <div class="col-md-4 col-12 pl-md-0" *ngFor="let produto of produtos" >
+
         <div class="main-product">
-          <img src="/assets/produto-1.png" alt="produto-1">
+          <img [src]="produto.img[0].url" alt={{produto.titulo}}>
           <header class="product-title" >
-            <h4><a>Macarons Diversons 90g</a></h4>
-            <p>R$ 9,00</p>
+            <h4><a>{{produto.titulo}}</a></h4>
+            <p>{{produto.valor | currency:'BRL':true }}</p>
           </header>
         </div>
       </div>
-      <div class="col-md-4 col-12">
+      <!-- <div class="col-md-4 col-12">
         <div class="main-product">
           <img src="/assets/produto-2.png" alt="produto-2">
           <header class="product-title" >
@@ -62,7 +66,7 @@
             <p>R$ 14,00</p>
           </header>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
@@ -97,7 +101,7 @@
             <textarea name="mensagem" class="form-control col-9" cols="30" rows="5"></textarea>
           </div>
           <div class="col-12 col-md-5 d-flex justify-content-end mt-4">
-            <button class="btn btn-orange " >enviar</button>
+            <button class="btn-enviar btn btn-orange " >enviar</button>
           </div>
         </form>
       </div>
