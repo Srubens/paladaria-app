@@ -11,3 +11,7 @@
   --gray-mediun:#5B5B5B;
   --gray-dark:#858585;
 }
+
+body{
+  background: var(--white-light) !important;
+}

@@ -16,9 +16,60 @@
   color:var(--white);
 }
 
+.main-about{
+  margin-top: 92px;
+}
+
+.about-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 30px auto;
+}
+
+.about-header h3{
+  margin-bottom: 18px;
+}
+
+.barra{
+  width: 97px;
+  height: 2px;
+  background: var(--orange);
+  margin-bottom: 40px;
+  margin-top: 18px;
+}
+
+.main-products{
+  margin-top: 116px;
+}
+
+.product-title{
+  background: var(--white);
+  width: 308px;
+  height: 120px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.product-title h4{
+  position: relative;
+  top: 20px;
+  margin-bottom: 40px;
+  font-size: 1rem;
+  color:var(--orange);
+}
+
+.product-title p{
+  color:var(--gray);
+}
+
+.main-forms{
+  margin-top: 161px;
+}
+
 @media (max-width: 992px){
   .main-content{
-    height: 480px;
+    height: 216px;
     background-size: contain;
     align-items: flex-start;
     font-size: .9rem;
