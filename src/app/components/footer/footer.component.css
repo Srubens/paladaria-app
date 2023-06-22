@@ -1,0 +1,24 @@
+.main-footer{
+  margin-top: 170px;
+}
+
+.telefone-icon{
+  display: flex;
+  background: url('../../../assets/telefone.svg') no-repeat;
+  width: 15px;
+  height: 15px;
+}
+
+.email-icon{
+  display: flex;
+  background: url('../../../assets/email.svg') no-repeat;
+  width: 15px;
+  height: 15px;
+}
+
+.location-icon{
+  display: flex;
+  background: url('../../../assets/Location.svg') no-repeat;
+  width: 15px;
+  height: 15px;
+}
