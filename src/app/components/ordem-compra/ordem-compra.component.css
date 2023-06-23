@@ -1,0 +1,9 @@
+img{
+  max-width: 100%;
+  width: 150px;
+}
+
+.btn-orange{
+  background: var(--orange);
+  color:var(--white);
+}

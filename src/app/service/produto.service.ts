@@ -6,18 +6,26 @@ import { HttpClient } from '@angular/common/http';
 export class ProdutoService {
 
   public produtos:Produto[]|any
-  public URL = "https://gist.githubusercontent.com/Srubens/5c10937aa90529e67ced6374db944382/raw/3245ee7cdcab30150234d5e8b5a0edaea56c00fb/db-produtos.json"
+  public URL = "https://paladaria.onrender.com"
 
   constructor(
     private http:HttpClient
   ) { }
 
   public getProdutos():Promise<any|Produto[]>{
-    return this.http.get<any>(`${this.URL}`)
+    return this.http.get<any>(`${this.URL}/produtos`)
       .toPromise()
       .then((res:HttpClient) => {
         return res
       })
+  }
+
+  public getProdutoPorId(id:number):Promise<any|Produto>{
+    return this.http.get<any>(`${this.URL}/produtos?id=${id}`)
+               .toPromise()
+               .then((res:HttpClient|any) =>{
+                return res[0]
+               })
   }
 
 }

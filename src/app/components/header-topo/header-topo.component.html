@@ -1,7 +1,7 @@
 <div class="bg-header">
 
   <nav class="navbar navbar-expand-lg navbar-light ">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" [routerLink]="['']" >
       <img src="/assets/logo.svg" alt="logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@
       </ul>
       <ul class="navbar-nav" >
         <li class="logo_nav">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" [routerLink]="['']" >
             <img src="/assets/logo.svg" alt="logo">
           </a>
         </li>
@@ -46,10 +46,10 @@
           </a>
         </li>
         <li class="nav-item nav-item-cart">
-          <a class="nav-link" href="#">
+          <a class="nav-link" routerLink="/ordem-compra">
             <img class="icon-cart" src="/assets/carrinho.svg" alt="carrinho">
             <span class="item-cart" >
-              <span>2</span>
+              <span>{{ getCountCart() }}</span>
             </span>
           </a>
         </li>

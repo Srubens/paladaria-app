@@ -44,29 +44,11 @@
         <div class="main-product">
           <img [src]="produto.img[0].url" alt={{produto.titulo}}>
           <header class="product-title" >
-            <h4><a>{{produto.titulo}}</a></h4>
+            <h4><a [routerLink]="['/produto',produto.id]" >{{produto.titulo}}</a></h4>
             <p>{{produto.valor | currency:'BRL':true }}</p>
           </header>
         </div>
       </div>
-      <!-- <div class="col-md-4 col-12">
-        <div class="main-product">
-          <img src="/assets/produto-2.png" alt="produto-2">
-          <header class="product-title" >
-            <h4>Tortilette de Laranja Lima com Amoras</h4>
-            <p>R$ 12,00</p>
-          </header>
-        </div>
-      </div>
-      <div class="col-md-4 col-12">
-        <div class="main-product">
-          <img src="/assets/produto-3.png" alt="produto-3">
-          <header class="product-title" >
-            <h4>Fatia de Torta gelada de Café com chocolate Amargo</h4>
-            <p>R$ 14,00</p>
-          </header>
-        </div>
-      </div> -->
     </div>
   </div>
 </div>
@@ -74,31 +56,31 @@
 <!-- MAIN FORMS  -->
 <div class="main-forms">
   <div class="container">
-    <div class="d-flex flex-md-row flex-column">
+    <div class="d-flex flex-md-row flex-column align-items-center">
       <div class="col-md-6 col-12">
         <header>
           <h3>Se interessou pelos nossos serviços? Manda uma mensagem pra gente. :&#x00029;</h3>
         </header>
         <br/>
         <form>
-          <div class="d-flex" >
-            <label class="col-3" for="">nome</label>
-            <input class="form-control col-9" type="text" name="nome"/>
+          <div class="d-flex flex-md-row flex-column" >
+            <label class="col-12 col-md-3" for="">nome</label>
+            <input class="form-control col-md-8 col-12" type="text" name="nome"/>
           </div>
           <br/>
-          <div class="d-flex" >
-            <label class="col-3" for="telefone">telefone</label>
-            <input class="form-control col-9" type="text" name="telefone"/>
+          <div class="d-flex flex-md-row flex-column" >
+            <label class="col-12 col-md-3" for="telefone">telefone</label>
+            <input class="form-control col-md-8 col-12" type="text" name="telefone"/>
           </div>
           <br/>
-          <div class="d-flex" >
-            <label class="col-3" for="email">e-mail</label>
-            <input class="form-control col-9" type="text" name="email"/>
+          <div class="d-flex flex-md-row flex-column" >
+            <label class="col-12 col-md-3" for="email">e-mail</label>
+            <input class="form-control col-md-8 col-12" type="text" name="email"/>
           </div>
           <br/>
-          <div class="d-flex" >
-            <label class="col-3" for="mensagem">mensagem</label>
-            <textarea name="mensagem" class="form-control col-9" cols="30" rows="5"></textarea>
+          <div class="d-flex flex-md-row flex-column" >
+            <label class="col-12 col-md-3" for="mensagem">mensagem</label>
+            <textarea name="mensagem" class="form-control col-md-8 col-12" cols="30" rows="5"></textarea>
           </div>
           <div class="col-12 col-md-5 d-flex justify-content-end mt-4">
             <button class="btn-enviar btn btn-orange " >enviar</button>

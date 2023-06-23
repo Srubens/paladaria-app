@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http"
 import localePt from "@angular/common/locales/pt"
 import { registerLocaleData } from '@angular/common';
+import { CarrinhoService } from './service/carrinho.service';
 
 registerLocaleData(localePt,'pt');
 
@@ -29,7 +30,8 @@ registerLocaleData(localePt,'pt');
     HttpClientModule
   ],
   providers: [
-    {provide: LOCALE_ID, useValue: 'pt-BR'}
+    {provide: LOCALE_ID, useValue: 'pt-BR'},
+    CarrinhoService
   ],
   bootstrap: [AppComponent]
 })

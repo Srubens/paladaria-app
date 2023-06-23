@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.produtoService.getProdutos()
         .then((produtos:Produto[]) =>{
-          console.log(produtos)
+          //console.log(produtos)
           this.produtos = produtos
         })
   }
