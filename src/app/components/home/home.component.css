@@ -78,6 +78,11 @@
   color:var(--orange);
 }
 
+.product-title h4 a{
+  text-decoration: none;
+  color:var(--orange);
+}
+
 .product-title p{
   color:var(--gray);
 }
