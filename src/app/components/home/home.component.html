@@ -35,9 +35,10 @@
       <h3>Produtos</h3>
       <div class="barra"></div>
     </div>
-    <div *ngIf="!produtos">
+    <div *ngIf="!produtos; else produto">
       Erro ao carregar produtos
     </div>
+    <ng-template #produto>
     <div  class="d-flex flex-column flex-md-row">
       <div class="col-md-4 col-12 pl-md-0" *ngFor="let produto of produtos" >
 
@@ -50,6 +51,7 @@
         </div>
       </div>
     </div>
+    </ng-template>
   </div>
 </div>
 <!-- MAIN PRODUCTS -->
@@ -65,17 +67,17 @@
         <form>
           <div class="d-flex flex-md-row flex-column" >
             <label class="col-12 col-md-3" for="">nome</label>
-            <input class="form-control col-md-8 col-12" type="text" name="nome"/>
+            <input class="form-control col-md-8 col-12" type="text" name="nome" required/>
           </div>
           <br/>
           <div class="d-flex flex-md-row flex-column" >
             <label class="col-12 col-md-3" for="telefone">telefone</label>
-            <input class="form-control col-md-8 col-12" type="text" name="telefone"/>
+            <input class="form-control col-md-8 col-12" type="text" name="telefone" required/>
           </div>
           <br/>
           <div class="d-flex flex-md-row flex-column" >
             <label class="col-12 col-md-3" for="email">e-mail</label>
-            <input class="form-control col-md-8 col-12" type="text" name="email"/>
+            <input class="form-control col-md-8 col-12" type="text" name="email" required/>
           </div>
           <br/>
           <div class="d-flex flex-md-row flex-column" >
