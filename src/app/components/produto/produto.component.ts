@@ -30,10 +30,26 @@ export class ProdutoComponent implements OnInit {
           })
     })
 
+    this.trocarFoto()
+
   }
 
   public addItemCarrinho():void{
     this.carrinhoService.addItem(this.produto)
   }
 
+  trocarFoto():void{
+    let tela:any = document.querySelector("#tela")
+    let fotos:any = document.querySelectorAll(".foto")
+    fotos.forEach((foto:any) =>{
+      foto.addEventListener("click",(event:any)=>{
+        document.querySelector("#tela img")?.remove()
+        let newElement = event.target
+        let cloneElement = newElement.cloneNode(true)
+        tela.appendChild(cloneElement)
+      })
+    })
+  }
+
 }
+
