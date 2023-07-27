@@ -1,6 +1,5 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderTopoComponent } from './components/header-topo/header-topo.component';
@@ -12,6 +11,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http"
 import localePt from "@angular/common/locales/pt"
 import { registerLocaleData } from '@angular/common';
 import { CarrinhoService } from './service/carrinho.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 registerLocaleData(localePt,'pt');
 
@@ -27,7 +27,9 @@ registerLocaleData(localePt,'pt');
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'pt-BR'},

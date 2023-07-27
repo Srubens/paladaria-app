@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Produto } from '../shared/produto.model';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from 'src/environments/environment.development';
 @Injectable()
 export class ProdutoService {
 
   public produtos:Produto[]|any
-  public URL = "https://paladaria.onrender.com"
+  public URL = environment.APIURL
 
   constructor(
     private http:HttpClient
   ) { }
 
-  public getProdutos():Promise<any|Produto[]>{
-    return this.http.get<any>(`${this.URL}/produtos`)
+  public async getProdutos():Promise<any|Produto[]>{
+    return await this.http.get<any>(`${this.URL}/produtos`)
       .toPromise()
       .then((res:HttpClient) => {
         return res
