@@ -12,7 +12,6 @@ import localePt from "@angular/common/locales/pt"
 import { registerLocaleData } from '@angular/common';
 import { CarrinhoService } from './service/carrinho.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 registerLocaleData(localePt,'pt');
 
 @NgModule({

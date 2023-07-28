@@ -3,11 +3,10 @@ import { Injectable } from '@angular/core';
 import { CarrinhoService } from './carrinho.service';
 import { Observable, map } from 'rxjs'
 import { Pedido } from '../shared/pedido.model';
-import { environment } from 'src/environments/environment.development';
 
 @Injectable()
 export class OrdemCompraService {
-  public URL = environment.APIWHATS
+  public URL = process.env['APIWHATS']
 
   constructor(
     public carrinhoService:CarrinhoService,
@@ -17,10 +16,10 @@ export class OrdemCompraService {
   public efetivarCompra(pedido:Pedido):Observable<any>{
     let headers:HttpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
-      'SecretKey': environment.SECRETKEY,
-      'PublicToken': environment.PUBLICTOKEN,
-      'DeviceToken': environment.DEVICETOKEN,
-      'Authorization': environment.AUTHORIZATION
+      'SecretKey': 'SECRETKEY',
+      'PublicToken': 'PUBLICTOKEN',
+      'DeviceToken': 'DEVICETOKEN',
+      'Authorization': 'AUTHORIZATION'
     })
     let valorTotal = this.carrinhoService.totalCarrinhoCompras()
     let msg = `Ola Nome.\nPedido feito foi:\n${pedido.itens.map((item) => item.titulo)},\nDescriação do pedido: ${pedido.itens.map((item) => {
@@ -30,7 +29,7 @@ export class OrdemCompraService {
     delete pedido.itens[0].img
     // console.log(pedido)
     // console.log(this.http)
-    let teste = {"number": environment.NUMBER, "text": msg}
+    let teste = {"number":'NUMBER', "text": msg}
     return this.http.post(
       `${this.URL}/whatsapp/sendText`,
       (teste),
